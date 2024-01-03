@@ -2,8 +2,7 @@ import csv
 
 from matplotlib import pyplot as plt, cm
 import numpy as np
-
-from random import shuffle
+import secrets
 
 
 
@@ -13,7 +12,7 @@ data = [{}, {}, {}, {}, {}]
 def export_pie_char(i):
 
     slices = [1,2,3] * 4 + [20, 25, 30] * 2
-    shuffle(slices)
+    secrets.SystemRandom().shuffle(slices)
  
     cmap = plt.cm.tab20c
     colors = cmap(np.linspace(0., 1., len(slices)))
